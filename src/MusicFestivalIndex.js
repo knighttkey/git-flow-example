@@ -15,6 +15,7 @@ import TicketOrder from "./components/TicketOrder/TicketOrder";
 import Shop from "./components/Shop/Shop";
 import LineUp from "./components/LineUp/LineUp";
 import Map from "./components/Map/Map";
+import User from "./components/User/User";
 const MusicFestivalIndex = () => {
   const [pathName, setPathName] = useState("home");
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -32,6 +33,7 @@ const MusicFestivalIndex = () => {
               <Route exact path="/ticketOrder" element={<TicketOrder />} />
               <Route exact path="/map" element={<Map />} />
               <Route exact path="/shop" element={<Shop />} />
+              <Route exact path="/user" element={<User />} />
             </Routes>
           </Fragment>
         </Provider>
