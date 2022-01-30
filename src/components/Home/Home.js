@@ -21,7 +21,6 @@ const Home = () => {
   const [snapshotList, setSnapshotList] = useState([]);
 
   const handlePickAction = (sourceBtn) => {
-
     switch (sourceBtn) {
       case "newBranchFirst":
         setSnapshotList([newBranchFirst]);
@@ -62,73 +61,80 @@ const Home = () => {
 
   return (
     <div className={`home_container`}>
-      <div className="git_flow_image">
-        <div className="git_flow git_flow_01"></div>
-        <div className="git_flow git_flow_02"></div>
-        <div className="git_flow git_flow_03"></div>
-        <div className="git_flow git_flow_04"></div>
-        <div className="git_flow git_flow_05"></div>
-      </div>
-      <div className="git_flow_btn_area">
-        <div className="btn_layer">
-          <div
-            className={`btn btn_reset ${snapshotList.length ? "show_btn" : ""}`}
-            onClick={handleReset}
-          >
-            Reset
-          </div>
-          <div
-            className="btn btn_new_branch_first"
-            onClick={() => handlePickAction("newBranchFirst")}
-          ></div>
-          <div
-            className="btn btn_new_branch_second"
-            onClick={() => handlePickAction("newBranchSecond")}
-          ></div>
-          <div
-            className="btn btn_commit_first"
-            onClick={() => handlePickAction("commitFirst")}
-          ></div>
-          <div
-            className="btn btn_commit_second"
-            onClick={() => handlePickAction("commitSecond")}
-          ></div>
-          <div
-            className="btn btn_commit_for_merge"
-            onClick={() => handlePickAction("commitMerged")}
-          ></div>
-          <div
-            className="btn btn_checkout"
-            onClick={() => handlePickAction("checkout")}
-          ></div>
-          <div
-            className="btn btn_conflict"
-            onClick={() => handlePickAction("conflict")}
-          ></div>
-          <div
-            className="btn btn_merge"
-            onClick={() => handlePickAction("merge")}
-          ></div>
-          <div
-            className="btn btn_pull"
-            onClick={() => handlePickAction("pull")}
-          ></div>
+      <div className="home_title">Git Flow Sample</div>
+      <div className="home_content">
+        <div className="git_flow_image">
+          <div className="git_flow git_flow_01"></div>
+          <div className="git_flow git_flow_02"></div>
+          <div className="git_flow git_flow_03"></div>
+          <div className="git_flow git_flow_04"></div>
+          <div className="git_flow git_flow_05"></div>
         </div>
-      </div>
-      <div
-        className={`git_flow_snapshot ${snapshotList.length ? "show_bg" : ""}`}
-      >
-        <div className="git_flow_snapshot_wrapper">
-          {snapshotList.map((item, index) => {
-            return (
-              <img
-                className="git_flow_snapshot_img"
-                alt="snapshot"
-                src={item}
-                key={index}
-              />
-            );
-          })}
+        <div className="git_flow_btn_area">
+          <div className="btn_layer">
+            <div
+              className={`btn btn_reset ${
+                snapshotList.length ? "show_btn" : ""
+              }`}
+              onClick={handleReset}
+            >
+              Reset
+            </div>
+            <div
+              className="btn btn_new_branch_first"
+              onClick={() => handlePickAction("newBranchFirst")}
+            ></div>
+            <div
+              className="btn btn_new_branch_second"
+              onClick={() => handlePickAction("newBranchSecond")}
+            ></div>
+            <div
+              className="btn btn_commit_first"
+              onClick={() => handlePickAction("commitFirst")}
+            ></div>
+            <div
+              className="btn btn_commit_second"
+              onClick={() => handlePickAction("commitSecond")}
+            ></div>
+            <div
+              className="btn btn_commit_for_merge"
+              onClick={() => handlePickAction("commitMerged")}
+            ></div>
+            <div
+              className="btn btn_checkout"
+              onClick={() => handlePickAction("checkout")}
+            ></div>
+            <div
+              className="btn btn_conflict"
+              onClick={() => handlePickAction("conflict")}
+            ></div>
+            <div
+              className="btn btn_merge"
+              onClick={() => handlePickAction("merge")}
+            ></div>
+            <div
+              className="btn btn_pull"
+              onClick={() => handlePickAction("pull")}
+            ></div>
+          </div>
+        </div>
+        <div
+          className={`git_flow_snapshot ${
+            snapshotList.length ? "show_bg" : ""
+          }`}
+        >
+          <div className="git_flow_snapshot_wrapper">
+            {snapshotList.map((item, index) => {
+              return (
+                <img
+                  className="git_flow_snapshot_img"
+                  alt="snapshot"
+                  src={item}
+                  key={index}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
