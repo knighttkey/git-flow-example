@@ -1,0 +1,46 @@
+.user_container {
+  display: flex;
+  justify-content: center;
+  height: 480px;
+  .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .user_data {
+      .user_column_name {
+        width: 360px;
+
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #333;
+        background-color: #c7c7c7;
+        .user_column {
+          width: 120px;
+          padding: 0 20px;
+          box-sizing: border-box;
+        }
+      }
+      .each_user {
+        width: 360px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #333;
+        border-right: 1px solid #333;
+        border-left: 1px solid #333;
+        &:first-child {
+          border-top: 1px solid #333;
+        }
+        .user_column {
+          width: 120px;
+          //   border-right: 1px solid #333;
+          padding: 0 20px;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
