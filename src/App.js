@@ -12,7 +12,6 @@ const App = () => {
   return (
     <div className="App">
       <Home />
-      123
     </div>
   );
 };

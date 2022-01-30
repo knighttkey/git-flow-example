@@ -1,4 +1,4 @@
 {
-    "editor.hover.enabled": false,
-    "editor.parameterHints.enabled": false
+    "editor.parameterHints.enabled": false,
+    "editor.bracketPairColorization.enabled": true
 }
