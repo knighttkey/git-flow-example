@@ -102,12 +102,22 @@ const Navbar = () => {
             <div
               className={`icon icon_cart ${isDarkMode ? "icon_cart_dark" : ""}`}
             ></div>
-            <div
-              className={`icon icon_user ${isDarkMode ? "icon_user_dark" : ""}`}
-              id="iconUser"
-              onClick={() => setUserPanelShow(true)}
+
+            <Link
+              className={`user_link`}
+              id="nav_link"
+              tabIndex="0"
+              to="/user"
+              onClick={() => setPathName("user")}
             >
-            </div>
+              <div
+                className={`icon icon_user ${
+                  isDarkMode ? "icon_user_dark" : ""
+                }`}
+                id="iconUser"
+                // onClick={() => setUserPanelShow(true)}
+              ></div>
+            </Link>
           </div>
         </div>
       </div>

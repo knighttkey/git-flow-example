@@ -105,15 +105,20 @@
             background-image: url("./../../image/shopping-cart-light.svg");
           }
         }
-        &.icon_user {
+      }
+      .user_link {
+        .icon_user {
+          width: 30px;
+          height: 30px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+          margin-right: 30px;
+          transition: 0.3s;
           background-image: url("./../../image/user-circle-gray.svg");
-
           &.icon_user_dark {
             background-image: url("./../../image/user-circle-light.svg");
           }
-        }
-        &#iconUser {
-          position: relative;
         }
       }
       .switch_toggle {
