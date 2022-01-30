@@ -6,13 +6,12 @@ import React, {
   useContext,
 } from "react";
 import "./App.scss";
-// import Navbar from "./components/Navbar/Navbar";
-import MusicFestivalIndex from "./MusicFestivalIndex";
+import Home from "./components/Home/Home";
 
 const App = () => {
   return (
     <div className="App">
-      <MusicFestivalIndex />
+      <Home />
     </div>
   );
 };
