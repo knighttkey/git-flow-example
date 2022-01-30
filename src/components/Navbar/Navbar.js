@@ -6,6 +6,7 @@ import React, {
   useContext,
 } from "react";
 import "./Navbar.scss";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import context, { Provider } from "./../context";
 
 const Navbar = () => {
@@ -24,10 +25,64 @@ const Navbar = () => {
           className={`navbar_inner ${isDarkMode ? "navbar_inner_dark" : ""}`}
         >
           <div className="main_logo_area">
+            <Link
+              className={`main_logo ${isDarkMode ? "main_logo_dark" : ""}`}
+              id="nav_link"
+              tabIndex="0"
+              to="/"
+              onClick={() => setPathName("home")}
+            ></Link>
           </div>
           <div
             className={`menu_item_area ${isDarkMode ? "menu_item_dark" : ""}`}
           >
+            <Link
+              className={`nav_item ${pathName === "about" ? "current" : ""}`}
+              id="nav_link"
+              tabIndex="0"
+              to="/about"
+              onClick={() => setPathName("about")}
+            >
+              <div className="func_icon icon_ticket">About</div>
+            </Link>
+            <Link
+              className={`nav_item ${pathName === "lineup" ? "current" : ""}`}
+              id="nav_link"
+              tabIndex="0"
+              to="/lineUp"
+              onClick={() => setPathName("lineup")}
+            >
+              <div className="func_icon icon_ticket">Line up</div>
+            </Link>
+            <Link
+              className={`nav_item ${
+                pathName === "ticketOrder" ? "current" : ""
+              }`}
+              id="nav_link"
+              tabIndex="0"
+              to="/ticketOrder"
+              onClick={() => setPathName("ticketOrder")}
+            >
+              <div className="func_icon icon_ticket">Ticket</div>
+            </Link>
+            <Link
+              className={`nav_item ${pathName === "map" ? "current" : ""}`}
+              id="nav_link"
+              tabIndex="0"
+              to="/map"
+              onClick={() => setPathName("map")}
+            >
+              <div className="func_icon icon_ticket">Map</div>
+            </Link>
+            <Link
+              className={`nav_item ${pathName === "shop" ? "current" : ""}`}
+              id="nav_link"
+              tabIndex="0"
+              to="/shop"
+              onClick={() => setPathName("shop")}
+            >
+              <div className="func_icon icon_ticket">Shop</div>
+            </Link>
           </div>
           <div className="func_area">
             <div
@@ -52,7 +107,6 @@ const Navbar = () => {
               id="iconUser"
               onClick={() => setUserPanelShow(true)}
             >
-
             </div>
           </div>
         </div>
