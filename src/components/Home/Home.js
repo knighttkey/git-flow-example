@@ -61,7 +61,7 @@ const Home = () => {
 
   return (
     <div className={`home_container`}>
-      <div className="home_title">Git Flow Sample</div>
+      <div className="home_title">Git Flow Example</div>
       <div className="home_content">
         <div className="git_flow_image">
           <div className="git_flow git_flow_01"></div>
