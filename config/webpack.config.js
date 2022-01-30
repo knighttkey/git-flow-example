@@ -113,7 +113,8 @@ module.exports = function (webpackEnv) {
         // css is located in `static/css`, use '../../' to locate index.html folder
         // in production `paths.publicUrlOrPath` can be a relative path
         options: paths.publicUrlOrPath.startsWith('.')
-          ? { publicPath: '../../' }
+        ? { publicPath: './../' }
+        // ? { publicPath: '../../' }
           : {},
       },
       {
@@ -217,7 +218,8 @@ module.exports = function (webpackEnv) {
       // webpack uses `publicPath` to determine where the app is being served from.
       // It requires a trailing slash, or the file assets will get an incorrect path.
       // We inferred the "public path" (such as / or /my-project) from homepage.
-      publicPath: paths.publicUrlOrPath,
+      publicPath: isEnvProduction ? './': paths.publicUrlOrPath,
+      // publicPath: './',
       // Point sourcemap entries to original disk location (format as URL on Windows)
       devtoolModuleFilenameTemplate: isEnvProduction
         ? info =>
@@ -365,11 +367,12 @@ module.exports = function (webpackEnv) {
             // smaller than specified limit in bytes as data URLs to avoid requests.
             // A missing `test` is equivalent to a match.
             {
-              test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+              test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
               type: 'asset',
               parser: {
                 dataUrlCondition: {
-                  maxSize: imageInlineSizeLimit,
+                  // maxSize: imageInlineSizeLimit,
+                  maxSize:32*1024
                 },
               },
             },
@@ -635,6 +638,7 @@ module.exports = function (webpackEnv) {
       new WebpackManifestPlugin({
         fileName: 'asset-manifest.json',
         publicPath: paths.publicUrlOrPath,
+        // publicPath: './',
         generate: (seed, files, entrypoints) => {
           const manifestFiles = files.reduce((manifest, file) => {
             manifest[file.name] = file.path;
