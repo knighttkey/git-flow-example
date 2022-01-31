@@ -219,6 +219,7 @@
 @media screen and (min-width: 640px) and (max-width: 1920px) {
   .home_container {
     transform: scale(calc(var(--main-width) / 1920));
+    transform-origin: top;
   }
 }
 @media screen and (max-width: 640px) {
