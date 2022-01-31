@@ -19,7 +19,19 @@ import pull from "./../../image/snapshot/pull_updated_content.png";
 import * as R from "ramda";
 const Home = () => {
   const [snapshotList, setSnapshotList] = useState([]);
+  const [currentWindowWidth, setCurrentWindowWidth] = useState([]);
 
+  if (/Line/.test(navigator.userAgent)) {
+    window.location.href = window.location.href + "?openExternalBrowser=1";
+  }
+
+  const reportWindowSize = () => {
+    setCurrentWindowWidth(window.innerWidth);
+    var root = document.querySelector(':root');  
+    root.style.setProperty('--main-width', window.innerWidth);
+  }
+  window.addEventListener("resize", reportWindowSize);
+  
   const handlePickAction = (sourceBtn) => {
     switch (sourceBtn) {
       case "newBranchFirst":
@@ -60,7 +72,7 @@ const Home = () => {
   };
 
   return (
-    <div className={`home_container`}>
+    <div className={`home_container`} >
       <div className="home_title">Git Flow Example</div>
       <div className="home_content">
         <div className="git_flow_image">
